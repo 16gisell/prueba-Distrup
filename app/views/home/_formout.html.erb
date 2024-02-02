@@ -1,10 +1,19 @@
 <% if @active_input === 1 %>
     <div class="container mt-5">
-    <%= form_tag save_data_path, method: :post do %>
-        <div class="col-12 col-sm-12 col-md-12 col-lg-12 mb-4">
-            <%= text_field_tag :monto%>
-            <%= submit_tag%>
-        </div>
-    <% end %>
+        <%= form_tag data_input_path, method: :post do %>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 mb-4">
+                <%= number_field_tag :monto%>
+                <%= submit_tag 'Calcular'%>
+            </div>
+        <% end %>
+    </div>
+<%end%>
+
+<% if @active_input_file === 1 %>
+    <div class="container mt-5">
+        <%= form_tag importar_csv_path, multipart: true do %>
+            <%= file_field_tag :file %>
+            <%= submit_tag 'importar csv' %>
+        <% end %>
     </div>
 <%end%>

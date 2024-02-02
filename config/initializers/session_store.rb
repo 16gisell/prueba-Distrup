@@ -1,0 +1,2 @@
+# Rails.application.config.session_store :cookie_store, key: 'pruebaSisrup6', expire_after: 1.day, domain: :all, tld_length: 2, :cookie_only => false, :secure => true, :httponly => true, :same_site => :none, :max_cookie_size => 10.megabytes
+# Rails.application.config.session_store :active_record_store, :key => 'pruebaSisrup6'

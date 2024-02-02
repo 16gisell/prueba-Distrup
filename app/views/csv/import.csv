@@ -1,0 +1,125 @@
+<div class="card col-4" data-bs-theme="dark" style="width: 30vw;">
+            <div class="card-header">
+                <h5 class="card-title text-center"> <i class='bx bxs-diamond' style="font-size: 6rem;"></i> ETher</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary"></h6>
+            </div> 
+            <div class="card-body">    
+                <div class="row">
+                    <div class="col-lg-5">
+                        <ul class="list-unstyled d-flex flex-column gap-2">
+                            <li>
+                                <a href="#" class="btn btn-hover-light rounded-2 d-flex align-items-start gap-2 py-2 px-3 lh-sm text-start">              
+                                    <div>
+                                        <strong>Monto invertido</strong>
+                                        <small>500</small>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="d-none d-lg-block vr mx-4 opacity-5 p-0">&nbsp;</div>
+                    <hr class="d-lg-none">
+
+                    <div class="col-lg-auto pe-3">
+                        <ul class="d-flex flex-column gap-2 list-unstyled small">
+                            <li>
+                                <a href="#" class="link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-75-hover">
+                                    <div>
+                                        <strong class="d-block">Ganancia Mensual</strong>
+                                        <small>5 %</small>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="mt-2">
+                                <a href="#" class="link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-75-hover">
+                                    <div>
+                                        <strong class="d-block">Ganancia Anual</strong>
+                                        <small>60 %</small>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="mt-2">
+                                <a href="#" class="link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-75-hover">
+                                    <div>
+                                        <strong class="d-block">Ganancia USD (Anual)</strong>
+                                        <small>300</small>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="mt-2">
+                                <a href="#" class="link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-75-hover">
+                                    <div>
+                                        <strong class="d-block">Ganancia al cambio</strong>
+                                        <small>152.130.914,05</small>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>   
+            </div>
+        </div>
+
+        <div class="card col-4" data-bs-theme="light" style="width: 30vw;">
+            <div class="card-header">
+                <h5 class="card-title text-center"><i class='bx bx-loader' style="font-size: 6rem;"></i> Cardano</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary"></h6>
+            </div> 
+            <div class="card-body">    
+                <div class="row">
+                    <div class="col-lg-5">
+                        <ul class="list-unstyled d-flex flex-column gap-2">
+                            <li>
+                                <a href="#" class="btn btn-hover-light rounded-2 d-flex align-items-start gap-2 py-2 px-3 lh-sm text-start">              
+                                    <div>
+                                        <strong>Monto invertido</strong>
+                                        <small>500</small>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="d-none d-lg-block vr mx-4 opacity-5 p-0">&nbsp;</div>
+                    <hr class="d-lg-none">
+
+                    <div class="col-lg-auto pe-3">
+                        <ul class="d-flex flex-column gap-2 list-unstyled small">
+                            <li>
+                                <a href="#" class="link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-75-hover">
+                                    <div>
+                                        <strong class="d-block">Ganancia Mensual</strong>
+                                        <small>5 %</small>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="mt-2">
+                                <a href="#" class="link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-75-hover">
+                                    <div>
+                                        <strong class="d-block">Ganancia Anual</strong>
+                                        <small>60%</small>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="mt-2">
+                                <a href="#" class="link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-75-hover">
+                                    <div>
+                                        <strong class="d-block">Ganancia USD (Anual)</strong>
+                                        <small>300</small>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="mt-2">
+                                <a href="#" class="link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-75-hover">
+                                    <div>
+                                        <strong class="d-block">Ganancia al cambio</strong>
+                                        <small>152.130.914,05</small>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>   
+            </div>
+        </div>

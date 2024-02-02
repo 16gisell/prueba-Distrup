@@ -10,13 +10,9 @@
                 </ul>
 
                 <div class="text-end">
-                    <button type="button" class="btn btn-outline-light me-2"><%= button_to "Calcular monto a invertir", calcular_inversion_path, method: :post %></button>
+                    <button type="button" class="btn btn-outline-light me-2"><%= button_to "Calcular monto a invertir", boton_input_path, method: :post %></button>
                     
-                    <button type="button" class="btn btn-warning"><%= button_to "Promedio desde csv", promedio_csv_path, method: :post %></button>
-                    <%= form_tag importar_csv_path, multipart: true do %>
-                        <%= file_field_tag :file %>
-                        <%= submit_tag 'importar csv' %>
-                    <% end %>
+                    <button type="button" class="btn btn-warning"><%= button_to "Promedio desde csv", boton_file_path, method: :post %></button>
                 </div>
             </div>
         </div>

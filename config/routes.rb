@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
-  get 'home/index'
-  post 'save_data', to: 'home#save_data'
-  post 'calcular_inversion', to: 'home#calcular_inversion'
-  post 'promedio_csv', to: 'home#promedio_csv'
+
+  root "home#index"
+  # get '/' to: 'home#index'
+  post 'data_input', to: 'home#data_input'
+  post 'boton_input', to: 'home#boton_input'
+  post 'boton_file', to: 'home#boton_file'
   get  'descargar_csv',  to: 'home#descargar_csv'
+  get  'descargar_json', to: 'home#descargar_json'
   post 'importar_csv', to: 'home#importar_csv'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
 end
+

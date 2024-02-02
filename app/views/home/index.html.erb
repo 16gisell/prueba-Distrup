@@ -1,229 +1,103 @@
+<%= render "home/alert" %>
 <%= render "home/formout" %>
 <div class="container">
     <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
-        <div class="card col-4" data-bs-theme="light" style="width: 30vw;">
-            <div class="card-header">
-                <h5 class="card-title text-center"><i class='bx bxl-bitcoin' style="font-size: 6rem;"></i> Bitcoin</h5>
-                <h6 class="card-subtitle mb-2 text-body-secondary"></h6>
-            </div> 
-            <div class="card-body">    
-                <div class="row">
-                    <div class="col-lg-5">
-                        <ul class="list-unstyled d-flex flex-column gap-2">
-                            <li>
-                                <a href="#" class="btn btn-hover-light rounded-2 d-flex align-items-start gap-2 py-2 px-3 lh-sm text-start">              
-                                    <div>
-                                        <strong>Monto invertido</strong>
-                                        <small>500</small>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="d-none d-lg-block vr mx-4 opacity-5 p-0">&nbsp;</div>
-                    <hr class="d-lg-none">
+        <% @data.each do |f, i| %>
+            <div class="card col-4" data-bs-theme="light" style="width: 30vw;">
+                <div class="card-header">
+                    <h5 class="card-title text-center">
+                        <% if f["moneda"]  === "Bitcoin" %>
+                            <i class='bx bxl-bitcoin' style="font-size: 6rem;"></i> 
+                        <% end %>
+                        <% if f["moneda"]  === "Ether" %>
+                            <i class='bx bxs-diamond' style="font-size: 6rem;"></i>
+                        <% end %>
+                        <% if f["moneda"]  === "Cardano" %>  
+                            <i class='bx bx-loader' style="font-size: 6rem;"></i>  
+                        <% end %>
+                        <%= f["moneda"] %> 
+                    </h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary"></h6>
+                </div> 
+                <div class="card-body">    
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <ul class="list-unstyled d-flex flex-column gap-2">
+                                <li>
+                                    <a href="#" class="btn btn-hover-light rounded-2 d-flex align-items-start gap-2 py-2 px-3 lh-sm text-start">              
+                                        <div>
+                                            <strong>Monto invertido</strong>
+                                            <small><%= f["montoInicial"]%></small>
+                                        </div>
+                                    </a>
+                                </li>
 
-                    <div class="col-lg-auto pe-3">
-                        <ul class="d-flex flex-column gap-2 list-unstyled small">
-                            <li>
-                                <a href="#" class="link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-75-hover">
-                                    <div>
-                                        <strong class="d-block">Ganancia Mensual</strong>
-                                        <small>5 %</small>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="mt-2">
-                                <a href="#" class="link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-75-hover">
-                                    <div>
-                                        <strong class="d-block">Ganancia Anual</strong>
-                                        <small>60 %</small>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="mt-2">
-                                <a href="#" class="link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-75-hover">
-                                    <div>
-                                        <strong class="d-block">Ganancia USD (Anual)</strong>
-                                        <small>300</small>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="mt-2">
-                                <a href="#" class="link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-75-hover">
-                                    <div>
-                                        <strong class="d-block">Ganancia al cambio</strong>
-                                        <small>152.130.914,05</small>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>   
+                                <li>
+                                    <a href="#" class="btn btn-hover-light rounded-2 d-flex align-items-start gap-2 py-2 px-3 lh-sm text-start">              
+                                        <div>
+                                            <strong>Monto Moneda</strong>
+                                            <small><%= f["response_monto"]%></small>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="d-none d-lg-block vr mx-4 opacity-5 p-0">&nbsp;</div>
+                        <hr class="d-lg-none">
+
+                        <div class="col-lg-auto pe-3">
+                            <ul class="d-flex flex-column gap-2 list-unstyled small">
+                                <li>
+                                    <a href="#" class="link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-75-hover">
+                                        <div>
+                                            <strong class="d-block">Ganancia Mensual</strong>
+                                            <small><%= f["porcentajeMensual"]%> %</small>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="mt-2">
+                                    <a href="#" class="link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-75-hover">
+                                        <div>
+                                            <strong class="d-block">Ganancia Anual</strong>
+                                            <small><%= f["porcentajeAnual"]%> %</small>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="mt-2">
+                                    <a href="#" class="link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-75-hover">
+                                        <div>
+                                            <strong class="d-block">Ganancia USD (Anual)</strong>
+                                            <small><%= f["gananciaUSD"]%></small>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="mt-2">
+                                    <a href="#" class="link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-75-hover">
+                                        <div>
+                                            <strong class="d-block">Ganancia al cambio</strong>
+                                            <small><%= f["estimacion"]%></small>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>   
+                </div>
             </div>
-        </div>
-
-        <div class="card col-4" data-bs-theme="dark" style="width: 30vw;">
-            <div class="card-header">
-                <h5 class="card-title text-center"> <i class='bx bxs-diamond' style="font-size: 6rem;"></i> ETher</h5>
-                <h6 class="card-subtitle mb-2 text-body-secondary"></h6>
-            </div> 
-            <div class="card-body">    
-                <div class="row">
-                    <div class="col-lg-5">
-                        <ul class="list-unstyled d-flex flex-column gap-2">
-                            <li>
-                                <a href="#" class="btn btn-hover-light rounded-2 d-flex align-items-start gap-2 py-2 px-3 lh-sm text-start">              
-                                    <div>
-                                        <strong>Monto invertido</strong>
-                                        <small>500</small>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="d-none d-lg-block vr mx-4 opacity-5 p-0">&nbsp;</div>
-                    <hr class="d-lg-none">
-
-                    <div class="col-lg-auto pe-3">
-                        <ul class="d-flex flex-column gap-2 list-unstyled small">
-                            <li>
-                                <a href="#" class="link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-75-hover">
-                                    <div>
-                                        <strong class="d-block">Ganancia Mensual</strong>
-                                        <small>5 %</small>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="mt-2">
-                                <a href="#" class="link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-75-hover">
-                                    <div>
-                                        <strong class="d-block">Ganancia Anual</strong>
-                                        <small>60 %</small>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="mt-2">
-                                <a href="#" class="link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-75-hover">
-                                    <div>
-                                        <strong class="d-block">Ganancia USD (Anual)</strong>
-                                        <small>300</small>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="mt-2">
-                                <a href="#" class="link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-75-hover">
-                                    <div>
-                                        <strong class="d-block">Ganancia al cambio</strong>
-                                        <small>152.130.914,05</small>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>   
-            </div>
-        </div>
-
-        <div class="card col-4" data-bs-theme="light" style="width: 30vw;">
-            <div class="card-header">
-                <h5 class="card-title text-center"><i class='bx bx-loader' style="font-size: 6rem;"></i> Cardano</h5>
-                <h6 class="card-subtitle mb-2 text-body-secondary"></h6>
-            </div> 
-            <div class="card-body">    
-                <div class="row">
-                    <div class="col-lg-5">
-                        <ul class="list-unstyled d-flex flex-column gap-2">
-                            <li>
-                                <a href="#" class="btn btn-hover-light rounded-2 d-flex align-items-start gap-2 py-2 px-3 lh-sm text-start">              
-                                    <div>
-                                        <strong>Monto invertido</strong>
-                                        <small>500</small>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="d-none d-lg-block vr mx-4 opacity-5 p-0">&nbsp;</div>
-                    <hr class="d-lg-none">
-
-                    <div class="col-lg-auto pe-3">
-                        <ul class="d-flex flex-column gap-2 list-unstyled small">
-                            <li>
-                                <a href="#" class="link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-75-hover">
-                                    <div>
-                                        <strong class="d-block">Ganancia Mensual</strong>
-                                        <small>5 %</small>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="mt-2">
-                                <a href="#" class="link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-75-hover">
-                                    <div>
-                                        <strong class="d-block">Ganancia Anual</strong>
-                                        <small>60%</small>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="mt-2">
-                                <a href="#" class="link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-75-hover">
-                                    <div>
-                                        <strong class="d-block">Ganancia USD (Anual)</strong>
-                                        <small>300</small>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="mt-2">
-                                <a href="#" class="link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-75-hover">
-                                    <div>
-                                        <strong class="d-block">Ganancia al cambio</strong>
-                                        <small>152.130.914,05</small>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>   
-            </div>
-        </div>
+        <% end %>        
     </div>
 </div>
-<%= link_to 'export csv', descargar_csv_path(format: :csv) %>
 
-
-<%= @data %>
-
-<div class=" container"> 
-    <table class="table table-striped table-hover">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-            </tr>
-        </tbody>
-    </table>
+<div class=" container">
+    <a class="link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-75-hover"> 
+        <i class='bx bxs-file'></i>  <%= link_to 'csv', descargar_csv_path(format: :csv) %> 
+    </a>
+    <a class="link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-75-hover me-5"> 
+        <%= link_to 'json', descargar_json_path(format: :json) %> <i class='bx bxs-file-json'></i> 
+    </a>
 </div>
+
+<%= @bsi %>
+
+<%= render "home/table" %>

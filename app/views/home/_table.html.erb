@@ -1,0 +1,43 @@
+<div class=" container mt-5"> 
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Moneda base</th>
+                <th scope="col">Moneda al cambio</th>
+                <th scope="col">Taza</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @tabla.each do |f, i| %>
+                <tr>
+                    <th scope="row">
+                        <i class='bx bx-star' ></i>
+                    </th>
+                    <td>
+                        <div>
+                        <% if f["asset_id_base"]  === "BTC" %>
+                            <i class='bx bxl-bitcoin' style="font-size: 2rem;"></i> 
+                                <strong>Bitcoin</strong>
+                                <small><%= f["asset_id_base"] %></small>
+                        <% end %>
+                        <% if f["asset_id_base"]  === "ETH" %>
+                            <i class='bx bxs-diamond' style="font-size: 2rem;"></i>
+                                <strong>Ether</strong>
+                                <small><%= f["asset_id_base"] %></small>
+                        <% end %>
+                        <% if f["asset_id_base"]  === "ADA" %>  
+                            <i class='bx bx-loader' style="font-size: 2rem;"></i>  
+                            <strong>Cardano</strong>
+                            <small><%= f["asset_id_base"] %></small>
+                        <% end %>
+                           
+                        </div>
+                    </td>
+                    <td><%= f["asset_id_quote"] %></td>
+                    <td><%= f["rate"] %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>

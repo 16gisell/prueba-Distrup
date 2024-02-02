@@ -1,8 +1,6 @@
 <% headers = ["Tipo_Moneda","Monto_invertido", "porcentaje_mensual", "porcentaje_anaul", "ganancia_USD", "Estimacion"] %> 
    
 <%= CSV.generate_line headers %> 
-
-<%= CSV.generate_line(["Binance", @info["monto"], @info["binance"]["porcentajeMensual_B"], @info["binance"]["porcentajeAnual_B"], @info["binance"]["gananciaUSD_B"], @info["binance"]["gananciaBinance"]]) %>
-<%= CSV.generate_line(["Ether", @info["monto"], @info["ether"]["porcentajeMensual_E"], @info["ether"]["porcentajeAnual_E"], @info["ether"]["gananciaUSD_E"], @info["ether"]["gananciaETher"]]) %>
-<%= CSV.generate_line(["Cardano", @info["monto"], @info["candaum"]["porcentajeMensual_C"], @info["candaum"]["porcentajeAnual_C"], @info["candaum"]["gananciaUSD_C"], @info["candaum"]["gananciaCandaun"]]) %>
- 
+<% @info.each do |f, i| %>
+    <%= CSV.generate_line([f["moneda"], f["montoInicial"], f["porcentajeMensual"], f["porcentajeAnual"], f["gananciaUSD"], f["estimacion"]]) %>
+<% end %>
